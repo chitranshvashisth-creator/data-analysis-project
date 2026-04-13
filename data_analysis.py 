@@ -1,0 +1,25 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Data
+data = {
+    "name": ["A", "B", "C", "D"],
+    "marks": [50, 80, 90, 70]
+}
+
+df = pd.DataFrame(data)
+
+# Total & Average
+print("Total:", df["marks"].sum())
+print("Average:", df["marks"].mean())
+
+# Top student
+top = df[df["marks"] == df["marks"].max()]
+print("Top Student:\n", top)
+
+# Graph
+plt.bar(df["name"], df["marks"])
+plt.title("Student Marks")
+plt.xlabel("Students")
+plt.ylabel("Marks")
+plt.show()
